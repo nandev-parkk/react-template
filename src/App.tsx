@@ -1,6 +1,21 @@
 import "@/styles/global.scss";
-import { Layout } from "@/components/index";
+import { Button, Layout } from "@/components/index";
+import { Home, Sub, NotFound } from "@/pages/index";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <NotFound />,
+  },
+  { path: "/sub", element: <Sub /> },
+]);
 
 export default function App() {
-  return <Layout>hello world</Layout>;
+  return (
+    <Layout>
+      <RouterProvider router={router} />
+    </Layout>
+  );
 }
