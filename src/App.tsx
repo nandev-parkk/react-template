@@ -1,11 +1,6 @@
 import "@/styles/global.scss";
-import Header from "@/components/Header/Header";
+import { Layout } from "@/components/index";
 
 export default function App() {
-  return (
-    <>
-      <h1>{process.env.HELLO}</h1>
-      <Header />
-    </>
-  );
+  return <Layout>hello world</Layout>;
 }
