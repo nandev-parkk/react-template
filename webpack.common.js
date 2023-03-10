@@ -12,11 +12,11 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(js|ts)x?$/,
-      //   use: "babel-loader",
-      //   exclude: /node_modules/,
-      // },
+      {
+        test: /\.(js|ts)x?$/,
+        use: "babel-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.tsx?$/,
         use: "ts-loader",
