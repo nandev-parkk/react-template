@@ -5,5 +5,6 @@ module.exports = merge(common, {
   mode: "development",
   devServer: {
     port: 4000,
+    open: true,
   },
 });
