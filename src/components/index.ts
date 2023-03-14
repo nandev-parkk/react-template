@@ -4,3 +4,4 @@ export { default as Form } from "./Form/Form";
 export { default as Button } from "./Button/Button";
 export { default as TextField } from "./TextField/TextField";
 export { default as Layout } from "./Layout/Layout";
+export { default as TestComponent } from "./TestComponent/TestComponent";
