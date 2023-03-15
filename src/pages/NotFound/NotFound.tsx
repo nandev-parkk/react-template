@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./NotFound.module.scss";
+import styles from './NotFound.module.scss';
 
 export default function NotFound() {
-  return <section>Not Found !</section>;
+	return <section>Not Found !</section>;
 }
