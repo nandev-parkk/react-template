@@ -1,16 +1,7 @@
 import '@/styles/global.scss';
-import { Button, Layout } from '@/components/index';
-import { Home, Sub, NotFound } from '@/pages/index';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Home />,
-		errorElement: <NotFound />,
-	},
-	{ path: '/sub', element: <Sub /> },
-]);
+import { Layout } from '@/components/index';
+import router from './utils/Router';
+import { RouterProvider } from 'react-router-dom';
 
 export default function App() {
 	return (
