@@ -1,24 +1,70 @@
 @charset "utf-8";
+@import './_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Noto Sans KR', sans-serif;
+	color: $color-black;
+}
+
+body {
+	font-size: $font-size-md;
 }
 
 ul,
 ol,
 li {
-  list-style: none;
+	list-style: none;
+}
+
+fieldset,
+input,
+button {
+	border: none;
+	outline: none;
+}
+
+legend {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 }
 
 button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+input {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
 }
 
 textarea {
-  resize: none;
+	resize: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
 }
