@@ -26,5 +26,12 @@ module.exports = {
 		'react/jsx-filename-extension': 0,
 		'react/jsx-one-expression-per-line': 0,
 		'no-nested-ternary': 0,
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': [
+			'warn',
+			{
+				additionalHooks: 'useRecoilCallback',
+			},
+		],
 	},
 };
