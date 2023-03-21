@@ -3,6 +3,8 @@
 .pnp.js
 .DS_Store
 .env
+.idea
+/dist
 
 .yarn/*
 !.yarn/cache
