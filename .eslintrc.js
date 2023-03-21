@@ -1,4 +1,5 @@
 module.exports = {
+	root: true,
 	env: {
 		browser: true,
 		es2021: true,
@@ -33,5 +34,25 @@ module.exports = {
 				additionalHooks: 'useRecoilCallback',
 			},
 		],
+		'import/extensions': [
+			'error',
+			'ignorePackages',
+			{
+				js: 'never',
+				jsx: 'never',
+				ts: 'never',
+				tsx: 'never',
+				json: 'never',
+			},
+		],
+	},
+	settings: {
+		'import/resolver': {
+			node: {
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+				moduleDirectory: ['node_modules', '@types'],
+			},
+			typescript: {},
+		},
 	},
 };
