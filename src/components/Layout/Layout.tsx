@@ -1,6 +1,6 @@
-import styles from './Layout.module.scss';
 import { Header, Footer } from '@/components/index';
 import { Children } from '@/@types/common';
+import styles from './Layout.module.scss';
 
 export default function Layout({ children }: Children) {
 	return (
