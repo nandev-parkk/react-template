@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import { HttpServiceProvider } from '@/modules/HttpService';
 import { RecoilRoot } from 'recoil';
+import App from './App';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,
@@ -10,10 +10,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<StrictMode>
-		<HttpServiceProvider>
-			<RecoilRoot>
+		<RecoilRoot>
+			<HttpServiceProvider>
 				<App />
-			</RecoilRoot>
-		</HttpServiceProvider>
+			</HttpServiceProvider>
+		</RecoilRoot>
 	</StrictMode>,
 );

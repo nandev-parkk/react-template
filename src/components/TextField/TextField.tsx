@@ -4,7 +4,6 @@ import styles from './TextField.module.scss';
 export default function TextField({
 	type,
 	value,
-	autoFocus,
 	disabled,
 	id,
 	name,
@@ -15,7 +14,6 @@ export default function TextField({
 		<input
 			type={type}
 			value={value}
-			autoFocus={autoFocus}
 			disabled={disabled}
 			id={id}
 			name={name}

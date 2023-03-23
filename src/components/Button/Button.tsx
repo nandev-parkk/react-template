@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes } from 'react';
+import { Children } from '@/@types/common';
 import styles from './Button.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	children: string | React.ReactNode;
+	children: string | Children;
 }
 
 export default function Button({

@@ -1,7 +1,9 @@
+import { FormHTMLAttributes } from 'react';
+import { Children } from '@/@types/common';
 import styles from './Form.module.scss';
 
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
-	children: React.ReactNode;
+interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
+	children: Children;
 	className?: string;
 	legend: string;
 }

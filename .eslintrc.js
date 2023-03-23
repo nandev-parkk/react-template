@@ -27,7 +27,11 @@ module.exports = {
 		'react/jsx-filename-extension': 0,
 		'react/jsx-one-expression-per-line': 0,
 		'no-nested-ternary': 0,
+		'class-methods-use-this': 'warn',
 		'react-hooks/rules-of-hooks': 'error',
+		'@typescript-eslint/no-var-requires': 0,
+		'react/require-default-props': 'warn',
+		'react/button-has-type': 'off',
 		'react-hooks/exhaustive-deps': [
 			'warn',
 			{

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import styles from './Home.module.scss';
 import { useHttpService } from '@/modules/HttpService';
 import { Response } from '@/@types/common';
+import styles from './Home.module.scss';
 
 interface Post {
 	id: number;
@@ -20,8 +20,6 @@ export default function Home() {
 				const { data, status } = res;
 				if (status === 200) {
 					setPosts(data);
-				} else {
-					return;
 				}
 			});
 	}, []);

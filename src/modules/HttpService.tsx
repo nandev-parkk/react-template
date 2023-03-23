@@ -1,8 +1,8 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 import { Children } from '@/@types/common';
 import axios from 'axios';
 
-interface HttpServiceType {
+interface IHttpService {
 	getPosts: () => any;
 }
 
@@ -17,16 +17,22 @@ class HttpService {
 
 			return res;
 		} catch (err) {
-			console.error(err);
+			console.error(err, 'err');
+			return err;
 		}
 	}
 }
 
-const HttpServiceContext = createContext<HttpServiceType>(new HttpService());
+const HttpServiceContext = createContext<IHttpService>(new HttpService());
 
-export function HttpServiceProvider({ children }: Children) {
+interface IHttpServiceProvider {
+	children: Children;
+}
+export function HttpServiceProvider({ children }: IHttpServiceProvider) {
+	const value = useMemo(() => new HttpService(), [HttpService]);
+
 	return (
-		<HttpServiceContext.Provider value={new HttpService()}>
+		<HttpServiceContext.Provider value={value}>
 			{children}
 		</HttpServiceContext.Provider>
 	);
