@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo } from 'react';
 import { Children } from '@/@types/common';
 import axios from 'axios';
 
-interface IHttpService {
+interface HttpServiceType {
 	getPosts: () => any;
 }
 
@@ -23,12 +23,12 @@ class HttpService {
 	}
 }
 
-const HttpServiceContext = createContext<IHttpService>(new HttpService());
+const HttpServiceContext = createContext<HttpServiceType>(new HttpService());
 
-interface IHttpServiceProvider {
+interface HttpServiceProviderType {
 	children: Children;
 }
-export function HttpServiceProvider({ children }: IHttpServiceProvider) {
+export function HttpServiceProvider({ children }: HttpServiceProviderType) {
 	const value = useMemo(() => new HttpService(), [HttpService]);
 
 	return (
