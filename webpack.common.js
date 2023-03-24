@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
 	entry: path.resolve(__dirname, 'src/index.tsx'),
@@ -22,11 +23,7 @@ module.exports = {
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
-			{
-				test: /\.(css|s[ac]ss)$/i,
-				use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-			},
-			{ test: /\.(png|jpe?g)$/, use: 'file-loader' },
+			{ test: /\.(png|jpe?g|gif)$/, use: 'file-loader' },
 		],
 	},
 	plugins: [
@@ -35,4 +32,20 @@ module.exports = {
 		}),
 		new Dotenv(),
 	],
+	optimization: {
+		minimizer: [
+			new ImageMinimizerPlugin({
+				minimizer: {
+					options: {
+						plugins: [
+							['gifsicle', { interlaced: true }],
+							['jpegtran', { progressive: true }],
+							['optipng', { optimizationLevel: 5 }],
+							['svgo', { plugins: [{ removeViewBox: false }] }],
+						],
+					},
+				},
+			}),
+		],
+	},
 };
