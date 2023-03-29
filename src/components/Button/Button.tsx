@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function Button({
-	type,
+	type = 'button',
 	disabled,
 	onClick,
 	className,
