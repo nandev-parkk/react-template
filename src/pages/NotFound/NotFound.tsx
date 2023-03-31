@@ -1,4 +1,4 @@
-import styles from './404.scss';
+import styles from './NotFound.scss';
 
 export default function NotFound() {
 	return <section>Not Found !</section>;
