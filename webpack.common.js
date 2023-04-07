@@ -36,6 +36,7 @@ module.exports = {
 		minimizer: [
 			new ImageMinimizerPlugin({
 				minimizer: {
+					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
 						plugins: [
 							['gifsicle', { interlaced: true }],
